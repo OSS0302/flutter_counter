@@ -17,7 +17,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Counter(),
+      home: Scaffold (
+          appBar: AppBar(
+            title: Text('카운터'),),
+          body : Counter()),
     );
   }
 }
@@ -32,6 +35,6 @@ class Counter extends StatefulWidget {
 class _CounterState extends State<Counter> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return  Container();
   }
 }
