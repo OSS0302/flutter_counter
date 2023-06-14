@@ -37,8 +37,8 @@ class _CounterState extends State<Counter> {
       child: Column(
         children: <Widget>[
         ElevatedButton(
-            onPressed: (),{},
-            child: Text("add"),
+            onPressed: () {},
+            child: Text('add'),
         ),
           Text('0'),
         ],
