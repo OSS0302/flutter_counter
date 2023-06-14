@@ -32,6 +32,8 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
+  int counter = 0;
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -39,13 +41,18 @@ class _CounterState extends State<Counter> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           ElevatedButton(
-            onPressed: () {},
-            child: Text(
-              'add',
-              style: TextStyle(fontSize: 30),
-            ),
+            child: Text('add'),
+            onPressed: () {
+              setState(() {
+                counter++;
+              });
+            },
           ),
-          Text('0'),
+
+          Text(
+            '$counter',
+            style: TextStyle(fontSize: 30),
+          ),
         ],
       ),
     );
