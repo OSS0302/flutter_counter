@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class Counter extends StatefulWidget {
   const Counter({Key? key}) : super(key: key);
 
@@ -37,10 +38,13 @@ class _CounterState extends State<Counter> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-        ElevatedButton(
+          ElevatedButton(
             onPressed: () {},
-            child: Text('add'),
-        ),
+            child: Text(
+              'add',
+              style: TextStyle(fontSize: 30),
+            ),
+          ),
           Text('0'),
         ],
       ),
