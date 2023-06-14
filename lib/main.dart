@@ -49,9 +49,14 @@ class _CounterState extends State<Counter> {
             },
           ),
 
-          Text(
-            '$counter',
-            style: TextStyle(fontSize: 30),
+          StreamBuilder<int>(
+            stream: null,
+            builder: (context, snapshot) {
+              return Text(
+                '$counter',
+                style: TextStyle(fontSize: 30),
+              );
+            }
           ),
         ],
       ),
