@@ -13,14 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
       ),
-      home: Scaffold (
+      home: Scaffold(
           appBar: AppBar(
-            title: Text('카운터'),),
-          body : Counter()),
+            title: Text('카운터'),
+          ),
+          body: Counter()),
     );
   }
 }
@@ -35,6 +34,6 @@ class Counter extends StatefulWidget {
 class _CounterState extends State<Counter> {
   @override
   Widget build(BuildContext context) {
-    return  Container();
+    return Container();
   }
 }
