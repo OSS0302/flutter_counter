@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 class Counter extends StatefulWidget {
   const Counter({Key? key}) : super(key: key);
 
@@ -34,6 +33,16 @@ class Counter extends StatefulWidget {
 class _CounterState extends State<Counter> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Column(
+        children: <Widget>[
+        ElevatedButton(
+            onPressed: (),{},
+            child: Text("add"),
+        ),
+          Text('0'),
+        ],
+      ),
+    );
   }
 }
