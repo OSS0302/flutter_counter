@@ -32,7 +32,7 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-  int counter = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -42,20 +42,17 @@ class _CounterState extends State<Counter> {
         children: <Widget>[
           ElevatedButton(
             child: Text('add'),
-            onPressed: () {
-              setState(() {
-                counter++;
-              });
-            },
+            onPressed: () {},
           ),
-
           StreamBuilder<int>(
             stream: null,
-            builder: (context, snapshot) {
-              return Text(
-                '$counter',
-                style: TextStyle(fontSize: 30),
-              );
+            builder: (context, snapshot){
+              if(snapshot.hasData){
+                return Text(
+                  '$snapshot.data',
+                  style: TextStyle(fontSize: 30),
+                );
+              }
             }
           ),
         ],
