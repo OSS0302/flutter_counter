@@ -46,7 +46,7 @@ final counterSubject = BehaviorSubject<int>();
             onPressed: () {},
           ),
           StreamBuilder<int>(
-            stream: counterSubject.stream, // 카운터서브젝틀를
+            stream: counterSubject.stream, // 카운터서브젝틀를 연결 하다 .
             builder: (context, snapshot){
               if(!snapshot.hasData){
                 return Text(
