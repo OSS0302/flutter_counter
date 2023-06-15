@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rxdart/rxdart.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,7 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-
+final counterSubject = BehaviorSubject<int>();
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +46,9 @@ class _CounterState extends State<Counter> {
             onPressed: () {},
           ),
           StreamBuilder<int>(
-            stream: null,
+            stream: counterSubject.stream, // 카운터서브젝틀를
             builder: (context, snapshot){
-              if(snapshot.hasData){
+              if(!snapshot.hasData){
                 return Text(
                   '$snapshot.data',
                   style: TextStyle(fontSize: 30),
