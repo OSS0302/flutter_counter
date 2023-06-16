@@ -33,7 +33,9 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-final counterSubject = BehaviorSubject<int>();
+  final counterSubject = BehaviorSubject<int>();
+
+  int counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -43,19 +45,24 @@ final counterSubject = BehaviorSubject<int>();
         children: <Widget>[
           ElevatedButton(
             child: Text('add'),
-            onPressed: () {},
+            onPressed: () {
+              counterSubject.add(++counter);
+            },
           ),
           StreamBuilder<int>(
-            stream: counterSubject.stream, // 카운터서브젝틀를 연결 하다 .
-            builder: (context, snapshot){
-              if(!snapshot.hasData){
-                return Text(
-                  '$snapshot.data',
-                  style: TextStyle(fontSize: 30),
-                );
-              }
-            }
-          ),
+              stream: counterSubject.stream, // 카운터서브젝틀를 연결 하다 .
+              initialData: 0,
+               builder: (context, snapshot ) {
+                if (snapshot.hasData) {
+                  return Text(
+                    '${snapshot.data}',
+                    style: TextStyle(fontSize: 30),
+                  );
+                  if(snapshot.hasData ==null){
+                    
+                  }
+                }
+              }),
         ],
       ),
     );
