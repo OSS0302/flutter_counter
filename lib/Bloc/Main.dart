@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_counter/Bloc/counter_bloc.dart';
 
 /// Flutter code sample for [Scaffold].
 
 void main() => runApp(const ScaffoldExampleApp());
+
+final Counterbloc = CounterBloc();
 
 class ScaffoldExampleApp extends StatelessWidget {
   const ScaffoldExampleApp({super.key});
