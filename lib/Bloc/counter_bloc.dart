@@ -9,4 +9,7 @@ class CounterBloc{
     _count++;
     _countSubject.add(_count); // BehaviorSubject 위해서 마지막 카운트 값을 출력한다.
   }
+
+  // Stream 추가
+Stream<int> get count$ => _countSubject.stream;
 }
