@@ -34,7 +34,13 @@ class _ScaffoldExampleState extends State<ScaffoldExample> {
       appBar: AppBar(
         title: const Text('Sample Code'),
       ),
-      body: Center(child: Text('You have pressed the button $_count times.')),
+      body: Center(
+          child: StreamBuilder <int >(builder: (context,snapshot) {
+            if(snapshot.hasData){
+              return Text('You have pressed the button $_count times.');
+            }
+          }),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => setState(() => _count++),
         tooltip: 'Increment Counter',
