@@ -52,14 +52,16 @@ class _CounterState extends State<Counter> {
           StreamBuilder<int>(
               stream: counterSubject.stream, // 카운터서브젝틀를 연결 하다 .
               initialData: 0,
+
                builder: (context, snapshot ) {
+                if
                 if (snapshot.hasData) {
                   return Text(
                     '${snapshot.data}',
                     style: TextStyle(fontSize: 30),
                   );
                   if(snapshot.hasData ==null){
-                    
+
                   }
                 }
               }),
