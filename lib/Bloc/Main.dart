@@ -41,7 +41,8 @@ class _ScaffoldExampleState extends State<ScaffoldExample> {
               builder: ( context, snapshot) {
             print('snapshot.data ${snapshot.data}');
             if(snapshot.hasData){
-              return Text('You have pressed the button ${snapshot.data} times.');
+              return Text(
+                   '${snapshot.data}',style: TextStyle(fontSize: 80),);
             } else {
               return const CircularProgressIndicator();
             }
