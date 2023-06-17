@@ -26,7 +26,8 @@ class ScaffoldExample extends StatefulWidget {
 }
 
 class _ScaffoldExampleState extends State<ScaffoldExample> {
-  int _count = 0;
+
+  // int _count = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -35,17 +36,27 @@ class _ScaffoldExampleState extends State<ScaffoldExample> {
         title: const Text('Sample Code'),
       ),
       body: Center(
-          child: StreamBuilder <int >(builder: (context,snapshot) {
+          child: StreamBuilder <int >(
+            stream: Counterbloc.count$,
+              builder: ( context, snapshot) {
+            print('snapshot.data ${snapshot.data}');
             if(snapshot.hasData){
-              return Text('You have pressed the button $_count times.');
+              return Text('You have pressed the button ${snapshot.data} times.');
+            } else {
+              return const CircularProgressIndicator();
             }
           }),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() => _count++),
+        onPressed: () {
+          setState(() {
+            Counterbloc.addCounter();
+          });
+        },
         tooltip: 'Increment Counter',
         child: const Icon(Icons.add),
       ),
     );
   }
 }
+
