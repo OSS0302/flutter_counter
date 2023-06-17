@@ -54,17 +54,18 @@ class _CounterState extends State<Counter> {
               initialData: 0,
 
                builder: (context, snapshot ) {
-                if
+
                 if (snapshot.hasData) {
                   return Text(
                     '${snapshot.data}',
                     style: TextStyle(fontSize: 30),
-                  );
-                  if(snapshot.hasData ==null){
+                    );
+                } else{
+                      return const CircularProgressIndicator();
 
                   }
                 }
-              }),
+          ),
         ],
       ),
     );
