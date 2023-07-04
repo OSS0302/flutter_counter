@@ -24,40 +24,29 @@ class MyApp extends StatelessWidget {
            colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
            useMaterial3: true,
          ),
-         home: const MyHomePage(title: 'Flutter Demo Home Page11'),
+         home: MyHomePage(),
        );
       }),
       );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  // int _counter = 0;
-
-
+class MyHomePage extends StatelessWidget {
 
 
   @override
   Widget build(BuildContext context) {
-    final  counter = Provider.of<Counter>(context);
+    final counter = Provider.of<Counter>(context);
 
     return Scaffold(
       appBar: AppBar(
 
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme
+            .of(context)
+            .colorScheme
+            .inversePrimary,
 
-        title: Text(widget.title),
+        title: Text(''),
       ),
       body: Center(
 
@@ -70,7 +59,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '${counter.count}',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .headlineMedium,
             ),
           ],
         ),
